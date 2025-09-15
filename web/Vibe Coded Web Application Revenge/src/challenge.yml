@@ -1,0 +1,12 @@
+name: "Vibe Coded Web Application Revenge"
+category: "Web"
+difficulty: "Medium"
+description: |
+I learned my mistake and improved by vibe-coding skills. It is better now.
+  
+flag:
+  format: "GCTF25{.*}"
+  case_sensitive: false
+
+Learning: |
+  yadayadaya

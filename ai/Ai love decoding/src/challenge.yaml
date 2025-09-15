@@ -1,0 +1,8 @@
+# GZCTF Challenge Configuration
+name: "Ai Love decoding"
+category: "Web/ AI"
+difficulty: "medium" # easy/medium/hard (will not publish or put tag on deployment.)
+description: "AI is very useful for business. There's nothing to worry about! right?"
+flag:
+  format: "GCTF25{.*}"
+  case_sensitive: false

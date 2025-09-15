@@ -1,0 +1,25 @@
+version: "3.9"
+services:
+  db:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_USER: ctfuser
+      POSTGRES_PASSWORD: ctfpass
+      POSTGRES_DB: ctfdb
+    volumes:
+      - ./db/init.sql:/docker-entrypoint-initdb.d/init.sql:ro
+    ports:
+      - "5433:5432"
+
+  web:
+    build: .
+    environment:
+      POSTGRES_HOST: db
+      POSTGRES_PORT: 5432
+      POSTGRES_DB: ctfdb
+      POSTGRES_USER: ctfuser
+      POSTGRES_PASSWORD: ctfpass
+    depends_on:
+      - db
+    ports:
+      - "8001:8001"

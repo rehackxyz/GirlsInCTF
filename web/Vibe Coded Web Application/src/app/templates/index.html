@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Neon Fox Search</title>
+  <link rel="stylesheet" href="/static/style.css" />
+</head>
+<body>
+  <div class="overlay"></div>
+  <div class="container">
+    <header>
+      <h1>🦊 Neon Fox Search</h1>
+      <p class="subtitle">Find products across the galaxy. (Totally safe... right?)</p>
+    </header>
+
+    <form class="search" method="GET" action="/search">
+      <input type="text" name="q" placeholder="Search products (try: fox)" value="{{ q }}" autocomplete="off" />
+      <button type="submit">Search</button>
+    </form>
+
+    {% if error %}
+      <div class="error">
+        <strong>Database Error:</strong>
+        <pre>{{ error }}</pre>
+      </div>
+    {% endif %}
+
+    {% if rows %}
+      <table>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Price</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for r in rows %}
+            <tr>
+              <td>{{ r[0] }}</td>
+              <td>{{ r[1] }}</td>
+              <td>{{ r[2] }}</td>
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    {% elif q %}
+      <p class="muted">No results. Maybe try… something more <em>creative</em>?</p>
+    {% endif %}
+
+    <footer>
+      <p>Girls in CTF 2025 by RE:UN10N</p>
+    </footer>
+  </div>
+</body>
+</html>

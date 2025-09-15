@@ -1,0 +1,9 @@
+version: '3.8'
+services:
+  latex-ctf:
+    build: .
+    ports:
+    - 7002:7002
+    volumes:
+    - ./flag.txt:/flag.txt:ro
+    restart: unless-stopped

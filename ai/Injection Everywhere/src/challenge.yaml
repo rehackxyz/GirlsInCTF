@@ -1,0 +1,8 @@
+# GZCTF Challenge Configuration
+name: "Injection Everywhere"
+category: "Web/ AI"
+difficulty: "easy" # easy/medium/hard (will not publish or put tag on deployment.)
+description: "Until today, we can still see injection. WHY?? (Now with Gemini API)"
+flag:
+  format: "GCTF25{.*}"
+  case_sensitive: false

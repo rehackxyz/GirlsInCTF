@@ -1,0 +1,12 @@
+name: "My Favourite Reporting Engine"
+category: "Web"
+difficulty: "Medium"
+description: |
+This is my favourite reporting engine. I recently learned about this typesetting systems when joining my new company!
+  
+flag:
+  format: "GCTF25{.*}"
+  case_sensitive: false
+
+Learning: |
+  yadayadaya

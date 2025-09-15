@@ -1,0 +1,12 @@
+name: "Nyeow Nyeow PDF Generator"
+category: "Web"
+difficulty: "Medium"
+description: |
+Nyeow's turn to make the PDF generator. Nyeow make it a bit better now. Secret? What secret? Nyeow dont know nyan~
+  
+flag:
+  format: "GCTF25{.*}"
+  case_sensitive: false
+
+Learning: |
+  yadayadaya

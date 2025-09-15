@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>My Favourite Reporting Engine</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+  <main class="container">
+    <header>
+      <h1>Live Editor</h1>
+      <p class="subtitle">Write your report using the provided editor below. Ensure the formatting is correct!</p>
+    </header>
+
+    <section class="editor">
+      <form method="post">
+        <label for="latex">Source</label>
+        <textarea id="latex" name="latex" rows="18"
+          placeholder="Enter the content...">{{ default_tex|default('') }}</textarea>
+        <div class="controls">
+          <button type="submit" class="btn primary">Compile it to PDF!!</button>
+        </div>
+      </form>
+    </section>
+
+    <section class="result">
+      <h2>Compilation Log</h2>
+      {% with messages = get_flashed_messages(with_categories=true) %}
+      {% if messages %}
+      <div class="flashes">
+        {% for category, message in messages %}
+        <div class="flash {{ category }}">{{ message }}</div>
+        {% endfor %}
+      </div>
+      {% endif %}
+      {% endwith %}
+      <pre id="log">{{ log }}</pre>
+      {% if pdf_url %}
+      <div class="pdf">
+        <a href="{{ pdf_url }}" target="_blank" class="btn">Open PDF</a>
+        <a href="{{ pdf_url }}" download class="btn secondary">Download PDF</a>
+      </div>
+      {% endif %}
+    </section>
+
+    <footer>
+      <small>CTF challenge designed and created for GCTF2025</small>
+    </footer>
+  </main>
+</body>
+
+</html>

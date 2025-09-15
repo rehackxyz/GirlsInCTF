@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="padding_vertical">32dp</dimen>
+    <dimen name="button_image_width">256dp</dimen>
+    <dimen name="button_image_height">256dp</dimen>
+
+</resources>

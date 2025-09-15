@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Hi, Unibot</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body { background: #f4f4f9; font-family: 'Segoe UI', sans-serif; margin: 0; }
+    .topbar { background: #ffffff; border-bottom: 1px solid #e6e6e6; padding: 12px 0; box-shadow: 0 1px 4px #0001; }
+    .topbar-inner { max-width: 600px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; padding: 0 16px; }
+    .brand { color: #2d6cdf; font-weight: 700; font-size: 1.1rem; }
+    .login-link { color: #2d6cdf; text-decoration: none; font-weight: 600; }
+    .login-link:hover { text-decoration: underline; }
+
+    .container { max-width: 600px; margin: 24px auto 40px; background: #fff; border-radius: 12px; box-shadow: 0 2px 8px #0001; padding: 0; }
+    .header { padding: 24px 24px 0 24px; font-size: 2rem; color: #2d6cdf; font-weight: bold; }
+    .chat-area { height: 60vh; overflow-y: auto; padding: 24px; display: flex; flex-direction: column; gap: 12px; }
+    .bubble { max-width: 80%; padding: 12px 18px; border-radius: 18px; font-size: 1rem; }
+    .bubble.bot { background: #e8f5e9; align-self: flex-start; white-space: normal; font-family: 'Segoe UI', sans-serif; }
+    .bubble.bot pre, .bubble.bot code {font-family: 'Consolas', monospace;	background: #e0e0e0;	border-radius: 6px;	padding: 2px 4px;	display: inline;	margin: 1px 0; overflow-x: auto;}    
+    .bubble.bot ul, .bubble.bot ol { margin: 8px 0 8px 24px; padding: 0; }
+    .bubble.bot li { margin-bottom: 4px; }
+    .bubble.user { background: #e1f5fe; align-self: flex-end; }
+    .input-area { display: flex; border-top: 1px solid #eee; padding: 16px; }
+    .input-area input { flex: 1; padding: 12px; border-radius: 8px; border: 1px solid #ccc; font-size: 1rem; }
+    .input-area button { margin-left: 8px; padding: 12px 20px; border: none; border-radius: 8px; background: #2d6cdf; color: #fff; font-size: 1rem; cursor: pointer; }
+    .input-area button:active { background: #1a4e8a; }
+  </style>
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+</head>
+<body>
+  <div class="topbar">
+    <div class="topbar-inner">
+      <div class="brand">Unibot</div>
+      <a class="login-link" href="/login">Login</a>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="header">Hi, Unibot</div>
+    <div class="chat-area" id="chat-area">
+      <div class="bubble bot">
+        Hello! I'm Unibot, your professional IT industry assistant. I can help you explore IT career paths, university choices, and industry trends.<br>
+        <b>Ask me anything about IT, tech, or your future in the industry!</b>
+      </div>
+    </div>
+    <form class="input-area" id="chat-form">
+      <input type="text" id="user-input" placeholder="Type your message here..." autocomplete="off" required />
+      <button type="submit">Send</button>
+    </form>
+  </div>
+  <script>
+    const chatArea = document.getElementById('chat-area');
+    const chatForm = document.getElementById('chat-form');
+    const userInput = document.getElementById('user-input');
+
+    chatForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const message = userInput.value.trim();
+      if (!message) return;
+      // Add user message
+      chatArea.innerHTML += `<div class="bubble user">${message}</div>`;
+      chatArea.scrollTop = chatArea.scrollHeight;
+      userInput.value = '';
+      // Send to backend
+      const res = await fetch('/chat', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ message })
+      });
+      const data = await res.json();
+      // Add bot reply with Markdown rendering
+      chatArea.innerHTML += `<div class="bubble bot">${marked.parse(data.response)}</div>`;
+      chatArea.scrollTop = chatArea.scrollHeight;
+    });
+  </script>
+</body>
+</html>

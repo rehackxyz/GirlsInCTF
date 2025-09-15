@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Nyeow Nyeow PDF Generator</title>
+<style>
+:root{
+--bg1: #071924; /* deep teal */
+--bg2: #0f3d2e; /* teal */
+--accent: #ff8a00; /* orange */
+--muted: #9fb7b3;
+}
+body{
+margin:0; padding:2rem; font-family: Inter, Roboto, Arial, sans-serif; background: linear-gradient(135deg,var(--bg1),var(--bg2)); color:#e6f7f2;
+}
+.card{ max-width:900px; margin:2rem auto; background: rgba(255,255,255,0.03); border-radius:14px; padding:2rem; box-shadow: 0 8px 30px rgba(0,0,0,0.6); }
+h1{ font-size:2rem; margin:0 0 1rem 0; color:var(--accent); }
+p.lead{ color:var(--muted); }
+form{ display:flex; gap:0.5rem; margin-top:1.2rem; }
+input[type=text]{ flex:1; padding:0.8rem; border-radius:8px; border: none; outline:none; background: rgba(255,255,255,0.02); color:inherit; }
+button{ padding:0.8rem 1.2rem; border-radius:8px; border:none; background:var(--accent); color:#071924; font-weight:700; cursor:pointer; }
+.help{ margin-top:1.2rem; background: rgba(255,255,255,0.02); padding:1rem; border-radius:8px; color:var(--muted); font-size:0.95rem; }
+footer{ text-align:center; color:var(--muted); margin-top:1rem; }
+</style>
+</head>
+<body>
+<div class="card">
+<h1>Nyeow Nyeow PDF Generator</h1>
+<p class="lead">Nyeow made a harder version than Nyan~</p>
+
+<form action="/generate" method="post">
+<input type="text" name="url" placeholder="https://example.com/" required />
+<button type="submit">Generate PDF</button>
+</form>
+
+
+<footer>Created for GCTF2025. <strong>Follow</strong> us</footer>
+</div>
+</body>
+</html>

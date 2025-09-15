@@ -1,0 +1,59 @@
+/* Cyberpunk pink/purple theme */
+:root {
+  --neon-pink: #ff49db;
+  --neon-purple: #7c3aed;
+  --neon-cyan: #00f0ff;
+  --bg-dark: #0b0211;
+  --card: rgba(20, 0, 30, 0.75);
+  --glass: rgba(255, 255, 255, 0.06);
+}
+
+* { box-sizing: border-box; }
+
+html, body { height: 100%; }
+body {
+  margin: 0;
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, "Helvetica Neue", Arial, "Apple Color Emoji", "Segoe UI Emoji";
+  color: #fdf2f8;
+  background: url('https://img.freepik.com/free-vector/cute-fox-kitsune-sitting-cartoon-vector-icon-illustration-animal-holiday-icon-isolated-flat-vector_138676-13166.jpg') center/cover fixed no-repeat, var(--bg-dark);
+}
+
+.overlay {
+  position: fixed; inset: 0; backdrop-filter: blur(4px) saturate(120%);
+  background: linear-gradient(120deg, rgba(124,58,237,0.35), rgba(255,73,219,0.25));
+}
+
+.container {
+  position: relative; z-index: 1; max-width: 920px; margin: 6vh auto; padding: 2rem;
+  background: var(--card); border: 1px solid var(--glass); border-radius: 20px;
+  box-shadow: 0 10px 40px rgba(124,58,237,0.35), inset 0 0 40px rgba(255,73,219,0.15);
+}
+
+header { text-align: center; }
+header h1 { font-size: 2.3rem; margin: 0 0 0.5rem; text-shadow: 0 0 12px var(--neon-purple), 0 0 24px var(--neon-pink); }
+.subtitle { margin: 0 0 2rem; opacity: 0.85; }
+
+.search { display: flex; gap: .5rem; margin-bottom: 1.25rem; }
+.search input {
+  flex: 1; padding: .9rem 1rem; background: var(--glass); border: 1px solid #a855f7; color: #fff;
+  border-radius: 14px; outline: none; font-size: 1rem; box-shadow: inset 0 0 20px rgba(124,58,237,0.18);
+}
+.search input::placeholder { color: #e879f9; opacity: .85; }
+.search button {
+  padding: .9rem 1.2rem; border-radius: 14px; border: 1px solid #db2777; background: linear-gradient(135deg, var(--neon-pink), var(--neon-purple));
+  color: white; font-weight: 700; letter-spacing: .4px; cursor: pointer; transition: transform .08s ease, filter .2s ease;
+}
+.search button:hover { transform: translateY(-1px); filter: brightness(1.1); }
+
+.error { background: rgba(255, 83, 112, 0.1); border: 1px solid #fb7185; padding: 1rem; border-radius: 12px; margin: 1rem 0; }
+.error pre { white-space: pre-wrap; color: #fecaca; }
+
+.muted { opacity: .8; }
+
+ table { width: 100%; border-collapse: collapse; background: rgba(255,255,255,0.04); border-radius: 14px; overflow: hidden; }
+ thead { background: linear-gradient(90deg, rgba(124,58,237,.35), rgba(255,73,219,.25)); }
+ th, td { padding: .85rem 1rem; border-bottom: 1px solid rgba(255,255,255,0.08); }
+ tbody tr:hover { background: rgba(124,58,237,0.12); }
+
+footer { margin-top: 1.25rem; font-size: .95rem; opacity: .9; }
+code { background: rgba(255,255,255,0.08); padding: .1rem .35rem; border-radius: 8px; }

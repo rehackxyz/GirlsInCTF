@@ -1,0 +1,14 @@
+name: "Akami's fragile heart"
+category: "Web"
+difficulty: "Easy"
+description: |
+Something happened to Akami. She keeps the story deep in her heart. No one knows. It feels like a memory when Mehta also had this situation before back in 2014. It might similar to what Akami is feeling right now, but not as overflown as what Mehta felt.
+
+Akami dedicates this web to her feeling.
+  
+flag:
+  format: "GCTF25{.*}"
+  case_sensitive: false
+
+Learning: |
+  yadayadaya

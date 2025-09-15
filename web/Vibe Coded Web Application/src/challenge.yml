@@ -1,0 +1,13 @@
+name: "Vibe Coded Web Application"
+category: "Web"
+difficulty: "Easy"
+description: |
+I have mastered my web development skills through the free course that taught me to vibe-code.
+There should be no vulnerability, right?
+  
+flag:
+  format: "GCTF25{.*}"
+  case_sensitive: false
+
+Learning: |
+  yadayadaya

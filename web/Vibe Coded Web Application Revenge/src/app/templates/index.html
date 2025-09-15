@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cyberpunk Search (Revenge)</title>
+    <style>
+        body {
+            background: url("https://img.freepik.com/free-vector/cute-fox-kitsune-sitting-cartoon-vector-icon-illustration-animal-holiday-icon-isolated-flat-vector_138676-13166.jpg") no-repeat center center fixed;
+            background-size: cover;
+            color: #ff66cc;
+            font-family: "Courier New", Courier, monospace;
+            text-align: center;
+            padding-top: 10%;
+        }
+        .container {
+            background-color: rgba(20, 0, 40, 0.8);
+            padding: 30px;
+            border-radius: 12px;
+            display: inline-block;
+            box-shadow: 0 0 20px #ff00ff;
+        }
+        input[type="text"] {
+            padding: 10px;
+            border: 2px solid #ff00ff;
+            background-color: #1a001a;
+            color: #ff66cc;
+            border-radius: 8px;
+            width: 250px;
+        }
+        input[type="submit"] {
+            padding: 10px 20px;
+            border: none;
+            background: linear-gradient(45deg, #ff00ff, #6600cc);
+            color: white;
+            border-radius: 8px;
+            cursor: pointer;
+            margin-left: 10px;
+        }
+        table {
+            margin: 20px auto;
+            border-collapse: collapse;
+            width: 80%;
+        }
+        th, td {
+            padding: 10px;
+            border: 1px solid #ff00ff;
+        }
+        th {
+            background-color: #330033;
+            color: #ff66cc;
+        }
+        td {
+            background-color: #1a001a;
+            color: #ffccff;
+        }
+        .hint {
+            font-size: 14px;
+            margin-top: 15px;
+            color: #ccccff;
+        }
+        .error {
+            color: #ff3366;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🔒 Cyberpunk Search (Revenge)</h1>
+        <p>Our WAF protects against common attacks. Can you bypass it?</p>
+        <form method="GET" action="/search">
+            <input type="text" name="q" placeholder="Search products...">
+            <input type="submit" value="Search">
+        </form>
+
+        {% if error %}
+        <div class="error">{{ error }}</div>
+        {% endif %}
+
+        {% if rows %}
+        <table>
+            <tr><th>ID</th><th>Name</th><th>Price</th></tr>
+            {% for row in rows %}
+            <tr>
+                <td>{{ row[0] }}</td>
+                <td>{{ row[1] }}</td>
+                <td>{{ row[2] }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+        {% endif %}
+    </div>
+</body>
+</html>

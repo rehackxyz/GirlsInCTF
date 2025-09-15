@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Conversation History</title>
+</head>
+<body>
+    <h1>Conversation History</h1>
+    <table border="1">
+        <tr>
+            <th>Timestamp</th>
+            <th>Sender</th>
+            <th>Message</th>
+        </tr>
+        {% autoescape false %}
+        {% for row in conversations %}
+        <tr>
+            <td>{{ row[2] }}</td>
+            <td>{{ row[0] }}</td>
+            <td>{{ row[1] }}</td>
+        </tr>
+        {% endfor %}
+        {% endautoescape %}
+    </table>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Login - Unibot</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body { background: #f4f4f9; font-family: 'Segoe UI', sans-serif; margin: 0; }
+    .topbar { background: #ffffff; border-bottom: 1px solid #e6e6e6; padding: 12px 0; box-shadow: 0 1px 4px #0001; }
+    .topbar-inner { max-width: 600px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; padding: 0 16px; }
+    .brand { color: #2d6cdf; font-weight: 700; font-size: 1.1rem; }
+    .nav-link { color: #2d6cdf; text-decoration: none; font-weight: 600; }
+    .nav-link:hover { text-decoration: underline; }
+
+    .wrap { max-width: 600px; margin: 24px auto 40px; }
+    .card { background: #fff; border-radius: 12px; box-shadow: 0 2px 8px #0001; padding: 24px; }
+    h2 { color: #2d6cdf; margin: 0 0 16px 0; font-size: 1.6rem; }
+    .field { margin-bottom: 12px; }
+    input { width: 100%; padding: 12px; border: 1px solid #ccc; border-radius: 8px; font-size: 1rem; }
+    button { width: 100%; padding: 12px; border: none; border-radius: 8px; background: #2d6cdf; color: #fff; font-size: 1rem; cursor: pointer; margin-top: 8px; }
+    button:active { background: #1a4e8a; }
+    .msg { margin-top: 12px; color: #c62828; font-weight: 600; }
+    .links { margin-top: 16px; font-size: 0.95rem; }
+    .links a { color: #2d6cdf; text-decoration: none; }
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <div class="topbar-inner">
+      <div class="brand">Unibot</div>
+      <a class="nav-link" href="/">Home</a>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <div class="card">
+      <h2>Admin Login</h2>
+      <form id="login-form">
+        <div class="field"><input style="width: 95%;" type="text" id="username" placeholder="Username" required></div>
+        <div class="field"><input style="width: 95%;" type="password" id="password" placeholder="Password" required></div>
+        <button type="submit">Sign In</button>
+        <div class="msg" id="msg" style="display:none;">Login failed</div>
+        <div class="links"><a href="/">← Back to Unibot</a></div>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById('login-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      document.getElementById('msg').style.display = 'block';
+    });
+  </script>
+</body>
+</html>

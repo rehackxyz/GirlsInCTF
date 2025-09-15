@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">interception</string>
+    <string name="admin_key">CHANGE_THIS_IN_PRODUCTION</string>
+</resources>

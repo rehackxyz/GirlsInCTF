@@ -1,0 +1,12 @@
+name: "Nyan Nyan PDF Generator"
+category: "Web"
+difficulty: "Easy"
+description: |
+Just another PDF generator. Nothing so secret about it.
+  
+flag:
+  format: "GCTF25{.*}"
+  case_sensitive: false
+
+Learning: |
+  yadayadaya

@@ -1,0 +1,85 @@
+{% extends 'layout.html' %}
+
+{% block title %}Under Development{% endblock %}
+
+{% block content %}
+    <div class="text-center">
+        <h1>Site Under Development</h1>
+        <p>This website is currently under construction. Please check back later.</p>
+    </div>
+
+    <!-- Floating Chatbox -->
+    <div id="chat-container" 
+        style="position: fixed; bottom: 40px; right: 40px; 
+            width: 35vw; max-width: 1200px; min-width: 400px;
+            background-color: white; border-radius: 18px; 
+            box-shadow: 0 0 32px rgba(0,0,0,0.18); display: none;">
+    <div id="chat-header" 
+            style="padding: 2rem; background-color: #007bff; color: white; 
+                border-top-left-radius: 18px; border-top-right-radius: 18px; 
+                cursor: pointer; font-size: 2.2rem;">
+        Chat with Bob
+    </div>
+    <div id="chat-body" 
+            style="padding: 2rem; height: 60vh; overflow-y: auto; font-size: 1.5rem;">
+        <div class="mb-3" style="font-size: 1.4rem;">
+            <strong>Bob:</strong> Hi, I am Bob, a friendly neighbour AI bot! What can I do for you?
+        </div>
+    </div>
+    <div id="chat-footer" style="padding: 2rem; border-top: 2px solid #ccc;">
+        <input type="text" id="user_input" 
+                class="form-control form-control-lg" 
+                placeholder="Ask Bob a question..." 
+                style="font-size: 1.3rem; height: 3.5rem;">
+        <button class="btn btn-primary btn-lg mt-3" 
+                style="width: 100%; font-size: 1.3rem;" 
+                onclick="chatWithBob()">Send</button>
+    </div>
+    </div>
+
+
+    <button id="chat-toggle" style="position: fixed; bottom: 40px; right: 40px; font-size: 1.5rem; padding: 18px 36px;" class="btn btn-primary btn-lg">Chat with Bob</button>
+
+    <script>
+        const chatContainer = document.getElementById('chat-container');
+        const chatToggle = document.getElementById('chat-toggle');
+        const chatHeader = document.getElementById('chat-header');
+        const chatBody = document.getElementById('chat-body');
+        const userInput = document.getElementById('user_input');
+
+        chatToggle.addEventListener('click', () => {
+            chatContainer.style.display = 'block';
+            chatToggle.style.display = 'none';
+        });
+
+        chatHeader.addEventListener('click', () => {
+            chatContainer.style.display = 'none';
+            chatToggle.style.display = 'block';
+        });
+
+        async function chatWithBob() {
+            const message = userInput.value;
+            if (!message) return;
+            chatBody.innerHTML += `<div class="mb-2"><strong>You:</strong> ${message}</div>`;
+            userInput.value = '';
+
+            const response = await fetch('/chat_bob', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ message })
+            });
+            const data = await response.json();
+
+            chatBody.innerHTML += `<div class="mb-2"><strong>Bob:</strong> ${data.response}</div>`;
+            chatBody.scrollTop = chatBody.scrollHeight;
+        }
+
+        // Allow Enter to send chat; Shift+Enter inserts newline
+        userInput.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter' && !e.shiftKey) {
+                e.preventDefault();
+                chatWithBob();
+            }
+        });
+    </script>
+{% endblock %}

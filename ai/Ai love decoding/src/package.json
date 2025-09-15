@@ -1,0 +1,9 @@
+{
+  "name": "ai-love-decoding-scripts",
+  "version": "1.0.0",
+  "description": "Scripts for the AI Love Decoding CTF challenge",
+  "main": "fetch_conversations.js",
+  "dependencies": {
+    "puppeteer": "^22.0.0"
+  }
+}

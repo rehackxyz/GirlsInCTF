@@ -1,0 +1,10 @@
+version: '3.8'
+services:
+  gctf25-injection-everywhere:
+    build: .
+    container_name: gctf25-injection-everywhere
+    ports:
+      - "5000:5000"
+    environment:
+    - GEMINI_API_KEY=${GEMINI_API_KEY}
+    restart: unless-stopped
