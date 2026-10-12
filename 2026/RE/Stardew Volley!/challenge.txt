@@ -1,0 +1,8 @@
+name: Stardew Volley
+author: 171k
+category: RE
+
+description:
+This Stardew Valley modder is looking for mod tester. Would you like to join and give feedback?
+
+flags: "gctf26{ihadtolearnstardewvalleymoddingin2daystocreatethischallenge}"

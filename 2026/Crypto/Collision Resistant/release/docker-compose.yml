@@ -1,0 +1,7 @@
+services:
+  crypto-collision-resistant-hash:
+    build: ./service
+    environment:
+      FLAG: "gctf26{Where_is_the_non_linear_part???}"
+    ports:
+      - 1337:5000

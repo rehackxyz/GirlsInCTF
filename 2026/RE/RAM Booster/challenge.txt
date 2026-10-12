@@ -1,0 +1,8 @@
+name: RAM Booster 
+author: 171k
+category: RE
+
+description:
+My sensei said I should not gatekeep anything from fwens so I will share this RAM booster so you can play Triple A games!
+
+flags: "gctf26{d0_n0t_b3l13v3_th0s3_bullsh1t_R4M_b00st3r_sc4m}"

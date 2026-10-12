@@ -1,0 +1,11 @@
+name: "Rough Draft"
+author: "Jerit3787"
+category: "WEB"
+description: "> Alex is a developer who recently launched their portfolio site. We heard they accidentally left an old database backup somewhere on the server. There might be some interesting credentials in there — can you find a way in?"
+value: 100
+type: dynamic
+
+flags:
+    - 'gctf26{r4w_d0gg1ng_th3_v1t3_d3v_s3rv3r}'
+
+state: visible

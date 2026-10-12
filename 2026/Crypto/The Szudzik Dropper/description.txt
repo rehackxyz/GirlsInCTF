@@ -1,0 +1,4 @@
+Our forensics team pulled a weird script from a compromised server. The threat actor didn't bother with standard encryption—they just mathematically folded the entire payload in on itself until only a single, strange value remained. We have the dropper and the final output. Unpack it and recover the flag.
+
+Format: gctf26{...}
+

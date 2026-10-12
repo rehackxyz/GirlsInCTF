@@ -1,0 +1,15 @@
+Challenge name: Escape Homework
+Category: Misc / jail
+Description: submit your assignment on time
+
+Flag: gctf26{Esc4p3_fr0m_T3rrar1um}
+
+## hosting the challenge
+
+1. build the image
+
+docker build -t escape-homework .
+
+2. run 
+
+docker run -p 127.0.0.1:8080:8080 --rm -it escape-homework 

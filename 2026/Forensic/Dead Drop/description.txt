@@ -1,0 +1,27 @@
+# Dead Drop
+
+**Category:** Forensics / Email Forensics
+
+**Difficulty:** Easy
+
+**Player Artifact:**
+
+```
+incident.eml
+```
+
+### Challenge Description
+
+> The crew thought they had found an easy mark.
+> 
+> 
+> A forged corporate security notice was slipped into a finance employee’s inbox, and shortly afterward the workstation began making suspicious outbound connections.
+> 
+> Investigators managed to preserve the original email before the trail went cold.
+> 
+> Follow the digital breadcrumbs, uncover what the payload was really after, and identify the document tied to the attempted heist.
+> 
+> **Flag format:** `gctf26{...}`
+>
+
+flag: gctf26{M41L_TR4C3_7H3_P4YL04D} 

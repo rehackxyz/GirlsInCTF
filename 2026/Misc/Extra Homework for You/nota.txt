@@ -1,0 +1,23 @@
+Challenge name: Extra Homework for You
+Category: Misc / jail / 0day
+Author: benkyou
+Description: someone cheated on the homework so I made everyone retake it. 
+
+*no public writeups for this challenge pls* :)
+
+Flag: gctf26{y0u_r3_A_r34l_S4ndb0x_m4stAHH!}
+
+## hosting the challenge
+
+1. build the image
+
+docker build -t homework-revenge .
+
+2. run 
+
+docker run -p 127.0.0.1:8080:8080 --rm -it homework-revenge
+
+## note to admins
+
+Open this challenge only after players solved the previous one "Escape Homework".
+For this challenge, players need to bypass the patch using another method to escape the sandbox.

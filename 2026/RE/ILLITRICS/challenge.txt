@@ -1,0 +1,8 @@
+name: ILLITRICS
+author: 171k
+category: RE
+
+description:
+I want to get romanized lyrics from these songs but I dont have premium..
+
+flags: "gctf26{omgicannowlistenandreadillitsongs_longliveillit}"

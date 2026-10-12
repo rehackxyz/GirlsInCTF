@@ -1,0 +1,11 @@
+name: "TicketDesk"
+author: "Jerit3787"
+category: "WEB"
+description: "> TicketDesk is our internal bug tracker. Someone pasted the admin password into a ticket last month and nobody has rotated it. The flag is only visible to administrators, so can you dig it out?"
+value: 700
+type: dynamic
+
+flags:
+    - 'gctf26{h4v3_y0u_tr13d_turn1ng_th3_4dm1n_0ff_4nd_0n}'
+
+state: visible

@@ -1,0 +1,11 @@
+name: "OpsHub"
+author: "Jerit3787"
+category: "WEB"
+description: "> OpsHub is the platform team's internal deployment portal. A contractor's handover notes claim the production database password was saved in one of the portal's user accounts, but nobody remembers which. Can you track it down?"
+value: 500
+type: dynamic
+
+flags:
+    - 'gctf26{my_0th3r_c4r_1s_y0ur_m3t4d4t4_s3rv3r}'
+
+state: visible

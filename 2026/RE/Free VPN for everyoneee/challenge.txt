@@ -1,0 +1,10 @@
+name: Free VPN
+author: 171k
+category: RE
+
+description:
+I found this completely free VPN that can connect to multiple countries, you should try it too!
+
+password: infected
+
+flags: "gctf26{n0th1ng_1s_fr33_1n_th1s_w0rld}"

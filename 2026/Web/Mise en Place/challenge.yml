@@ -1,0 +1,11 @@
+name: "Mise en Place"
+author: "Jerit3787"
+category: "WEB"
+description: "> InkWell is a popular self-hosted blogging platform. The admin dashboard supposedly contains some highly confidential posts about internal operations. Registration is closed. Find the flag."
+value: 500
+type: dynamic
+
+flags:
+    - 'gctf26{l0n3st4r_w4s_1n_r0cky0u_th3_wh0l3_t1m3}'
+
+state: visible

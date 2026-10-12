@@ -1,0 +1,8 @@
+name: DCK-Link
+author: 171k
+category: RE
+
+description:
+We got hold of a firmware update for a DCK-Link RX2809. Theres supposed to be a maintenance login that isnt in the manual. Find your way in and get the diagnostic record.
+
+flags: "gctf26{theflagis6767sopleaseputthiswholestringinaflagformat}"
