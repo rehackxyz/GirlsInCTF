@@ -1,7 +1,6 @@
 # Girls in CTF 2025
-https://girls-in-ctf.site/2025
 
-![https://girls-in-ctf.site/assets/img/gctf2025_final.png](https://girls-in-ctf.site/assets/img/gctf2025_final.png)
+https://girls-in-ctf.site/2025
 
 ## Challenge creators from RE:UN10N:
 - 0x251e
