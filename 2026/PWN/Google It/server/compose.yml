@@ -1,0 +1,58 @@
+name: girlctf-v8-2
+
+services:
+  target:
+    platform: linux/amd64
+    image: "${V8_IMAGE:-girlctf-v8-2:local}"
+    build:
+      context: .
+    expose:
+      - "1337"
+    environment:
+      RUN_TIMEOUT_SECONDS: "${RUN_TIMEOUT_SECONDS:-30}"
+      MAX_ATTEMPTS: "${MAX_ATTEMPTS:-10}"
+    user: "1000:1000"
+    read_only: true
+    pids_limit: 512
+    cap_drop:
+      - ALL
+    security_opt:
+      - no-new-privileges:true
+    tmpfs:
+      - /tmp:rw,exec,nosuid,nodev,size=2g
+      - /dev/shm:rw,nosuid,nodev,noexec,size=2g
+    volumes:
+      - "${FLAG_FILE:-./flag.txt}:/flag/flag:ro"
+    networks:
+      - isolated
+    restart: unless-stopped
+
+  gate:
+    platform: linux/amd64
+    image: "${V8_IMAGE:-girlctf-v8-2:local}"
+    build:
+      context: .
+    entrypoint: ["python3", "/app/gate.py"]
+    environment:
+      UPSTREAM_HOST: target
+      GATE_IDLE_TIMEOUT_SECONDS: "${GATE_IDLE_TIMEOUT_SECONDS:-420}"
+    ports:
+      - "${BIND_ADDRESS:-0.0.0.0}:${CHALLENGE_PORT:-1338}:1337"
+    user: "1000:1000"
+    read_only: true
+    pids_limit: 64
+    cap_drop:
+      - ALL
+    security_opt:
+      - no-new-privileges:true
+    depends_on:
+      - target
+    networks:
+      - isolated
+      - ingress
+    restart: unless-stopped
+
+networks:
+  isolated:
+    internal: true
+  ingress: {}

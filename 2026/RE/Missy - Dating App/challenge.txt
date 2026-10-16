@@ -1,0 +1,8 @@
+name: Missy Dating App
+author: 171k
+category: RE
+
+description:
+Someone said that the developer accidentally left an important production file in before launching. Can you find it for me?
+
+flags: "gctf26{ayya_m1ssy_4pp_s0_c4r3l3ss}"

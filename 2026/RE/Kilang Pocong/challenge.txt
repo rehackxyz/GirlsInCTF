@@ -1,0 +1,12 @@
+name: Kilang Pocong
+author: 171k
+category: RE
+
+description:
+Pocong is an entity that you should not be scared of <3 
+
+Link: https://itikjoget.itch.io/kilang-pocong-gctf26
+
+Note: This is a RE challenge. You do NOT need to attack the itch.io site
+
+flags: "gctf26{m4y_sh3_r3st_1n_p3ac3}"

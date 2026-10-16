@@ -1,0 +1,11 @@
+name: "GatePass"
+author: "Jerit3787"
+category: "WEB"
+description: "> GatePass is the access-control gateway in front of our internal admin API. The on-call team swears a temporary maintenance token was left enabled after last week's incident, and the vault behind the gateway still holds the flag. Can you find it?"
+value: 650
+type: dynamic
+
+flags:
+    - 'gctf26{tw0_p4rs3rs_w4lk_1nt0_4_b4r_0n3_l34v3s}'
+
+state: visible

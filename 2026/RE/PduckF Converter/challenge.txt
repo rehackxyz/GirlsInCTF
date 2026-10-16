@@ -1,0 +1,8 @@
+name: PDuckF
+author: 171k
+category: RE
+
+description:
+..I am sorry for sharing that scam software to you.. SOOO to pay back for your kindness, I wanna share with you this GOATED PDF converter! Its totally free and offline!!!
+
+flags: "gctf26{p4rs1ng_y0ur_d0cum3nts_t0_h4ck3r}"

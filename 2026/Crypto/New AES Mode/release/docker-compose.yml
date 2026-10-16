@@ -1,0 +1,8 @@
+services:
+  crypto-new-aes-mode:
+    build: ./service
+    environment:
+      FLAG: "${FLAG:-gctf26{Key-hashed_must_be_used_for_wegman-carter!}}"
+    ports:
+      - "1337:5000"
+    restart: unless-stopped

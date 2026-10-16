@@ -1,0 +1,5 @@
+Our target seems to have sent the exact same secret message to 11 different people! 
+
+Wait... why is everyone's public exponent set to 11? That seems like a bad idea if you're broadcasting...
+
+

@@ -1,0 +1,10 @@
+Google it // Pwn 
+
+Testing 150.0.7871.46, it is blackbox? (not really ...
+
+nc <host> <port>
+
+Protocol: send the decimal byte length, then exactly that many raw HTML bytes.
+
+# ARG CHROME_URL=https://storage.googleapis.com/chrome-for-testing-public/150.0.7871.46/linux64/chrome-linux64.zip
+# ARG CHROME_SHA256=ad115a7498a17f53f6ed0914458326c6516addc756224db14c32184a9b1ab078

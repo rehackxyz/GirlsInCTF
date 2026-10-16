@@ -1,0 +1,11 @@
+name: "Switchboard"
+author: "Jerit3787"
+category: "WEB"
+description: "> VoIPManager Pro is an enterprise PBX management platform used by thousands of businesses. A disgruntled former employee claims they left sensitive voicemail recordings and call logs somewhere in the system. Can you recover the confidential data before it gets patched?"
+value: 300
+type: dynamic
+
+flags:
+    - 'gctf26{jwt_m0r3_l1k3_ju5t_w1ng1ng_th3_t0k3ns}'
+
+state: visible

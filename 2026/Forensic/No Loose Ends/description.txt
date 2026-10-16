@@ -1,0 +1,22 @@
+## No Loose Ends
+
+**Category:** Forensics
+
+**Difficulty:** Easy
+
+**Flag Format:** `gctf26{...}`
+
+
+A workstation inside the Finance department triggered a high-severity security alert shortly after suspicious activity was detected. By the time the incident response team arrived, the suspected payload had already been quarantined and removed from the system.
+
+No weapon. No loot. No obvious evidence.
+
+But every good heist leaves something behind.
+
+Investigators managed to preserve network traffic from the affected environment. Reconstruct what happened, identify the quarantined artifact, and follow its digital fingerprint.
+
+The file may be gone.
+
+Its trail is not.
+
+**Flag format:** `gctf26{Th3_H4sh_R3m3mb3r5}`
